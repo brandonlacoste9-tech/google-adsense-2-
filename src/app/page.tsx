@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle, BookOpen, Settings, Layout, Search, BarChart, ArrowRight, Star, ShieldCheck, Zap } from "lucide-react";
+import { CheckCircle, BookOpen, Settings, Layout, Search, BarChart, ArrowRight, Star, ShieldCheck, Zap, Quote, Mail, Bell } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
 
 export default function Home() {
@@ -39,23 +39,6 @@ export default function Home() {
                   Profit Calculator
                 </Link>
               </div>
-              
-              <div className="mt-12 flex justify-center lg:justify-start items-center gap-8 text-slate-500 border-t border-white/5 pt-8">
-                <div className="flex flex-col">
-                  <span className="text-white font-bold text-2xl">98%</span>
-                  <span className="text-xs uppercase tracking-tighter">Success Rate</span>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="flex flex-col">
-                  <span className="text-white font-bold text-2xl">48h</span>
-                  <span className="text-xs uppercase tracking-tighter">Avg. Approval</span>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="flex flex-col">
-                  <span className="text-white font-bold text-2xl">10k+</span>
-                  <span className="text-xs uppercase tracking-tighter">Students</span>
-                </div>
-              </div>
             </div>
 
             <div className="flex-1 relative w-full max-w-[600px]">
@@ -69,14 +52,53 @@ export default function Home() {
                   className="rounded-xl shadow-inner w-full h-auto"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 glass-card p-6 border-emerald-500/30 animate-bounce-slow">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
-                    <Zap size={24} />
-                  </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories */}
+      <section className="py-32 bg-white/[0.02]">
+        <div className="container">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-black mb-4 gradient-text">Publisher Success Stories</h2>
+            <p className="text-slate-500 max-w-xl mx-auto italic">
+              Real publishers. Real income. Real results from the Blueprint Academy.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="glass-card p-10 relative group">
+              <Quote className="absolute top-10 right-10 text-primary opacity-10 group-hover:opacity-30 transition-opacity" size={80} />
+              <div className="flex items-start gap-6 relative z-10">
+                <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/20 shrink-0">
+                  <Image src="/avatar1.png" alt="Student" width={80} height={80} className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <p className="text-xl text-slate-300 leading-relaxed mb-6 italic">
+                    "I was stuck in the 'Low Value Content' rejection loop for 8 months. After taking the Academy's Niche Selection module, my third site was approved in 3 days. My first month revenue was $1,200."
+                  </p>
                   <div>
-                    <p className="text-xs text-slate-400 uppercase font-bold tracking-widest">Revenue Lift</p>
-                    <p className="text-xl font-black text-white">+340%</p>
+                    <h4 className="text-white font-bold text-lg">Marcus Thorne</h4>
+                    <p className="text-xs text-primary font-bold uppercase tracking-widest">TechReviewHub.com (Approved 2026)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card p-10 relative group">
+              <Quote className="absolute top-10 right-10 text-emerald-500 opacity-10 group-hover:opacity-30 transition-opacity" size={80} />
+              <div className="flex items-start gap-6 relative z-10">
+                <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-500/20 shrink-0">
+                  <Image src="/avatar2.png" alt="Student" width={80} height={80} className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <p className="text-xl text-slate-300 leading-relaxed mb-6 italic">
+                    "The Profit Calculator alone changed my strategy. I realized I was targeting low-CPM keywords. Switched to the Academy's Finance Blueprint and my CPC tripled overnight."
+                  </p>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">Elena Rossi</h4>
+                    <p className="text-xs text-emerald-400 font-bold uppercase tracking-widest">FinStreamGlobal (Approved 2026)</p>
                   </div>
                 </div>
               </div>
@@ -119,10 +141,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Newsletter */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="container">
+          <div className="glass-panel p-16 border-indigo-500/10 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-6">
+                  <Bell size={24} className="animate-tada" />
+                </div>
+                <h2 className="text-4xl font-black text-white mb-4">Master the Algorithm</h2>
+                <p className="text-slate-400 text-lg">
+                  Get daily monetization updates, high-CPC keyword lists, and approval hacks delivered straight to your inbox.
+                </p>
+              </div>
+              <div className="relative">
+                <div className="flex gap-2 p-2 bg-white/5 border border-white/10 rounded-2xl focus-within:border-primary transition-colors">
+                  <div className="flex items-center pl-4 text-slate-500">
+                    <Mail size={20} />
+                  </div>
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    className="flex-1 bg-transparent border-none outline-none py-4 px-2 text-white"
+                  />
+                  <button className="btn-premium px-8 rounded-xl">
+                    Subscribe
+                  </button>
+                </div>
+                <p className="mt-4 text-[10px] text-slate-600 uppercase tracking-widest font-bold text-center">
+                  Join 10,000+ Publishers. No Spam. Only Value.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
-      <section className="py-40 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/10 -z-10" />
-        <div className="container text-center relative z-10">
+      <section className="py-40 relative">
+        <div className="container text-center">
           <div className="max-w-3xl mx-auto glass-panel p-16 border-white/5 bg-white/[0.02]">
             <h2 className="text-5xl font-black mb-8 leading-tight text-white">Join the Elite <br /><span className="text-primary">1% of Publishers.</span></h2>
             <p className="text-lg text-slate-400 mb-12">
