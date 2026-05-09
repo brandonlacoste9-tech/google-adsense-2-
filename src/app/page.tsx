@@ -1,30 +1,36 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle, BookOpen, Settings, Layout, Search, BarChart, ArrowRight, Star, ShieldCheck, Zap } from "lucide-react";
+import AdSlot from "@/components/AdSlot";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen page-enter">
       {/* Background Decor */}
       <div className="glow-spot glow-primary" />
       <div className="glow-spot glow-secondary" />
 
+      {/* Top Leaderboard Ad */}
+      <div className="container pt-8">
+        <AdSlot type="leaderboard" />
+      </div>
+
       {/* Hero Section */}
-      <section className="pt-32 pb-24 overflow-hidden">
+      <section className="pt-20 pb-24 overflow-hidden">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-8">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 text-center lg:text-left relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-8 mx-auto lg:mx-0">
                 <Star size={12} className="fill-indigo-400" />
                 The Gold Standard in AdSense Training
               </div>
               <h1 className="text-6xl md:text-7xl font-black mb-8 leading-[1.05] gradient-text">
                 Monetize Your <br />Passion with <br /><span className="text-primary italic">Expert Precision.</span>
               </h1>
-              <p className="text-xl text-slate-400 mb-10 leading-relaxed max-w-xl">
+              <p className="text-xl text-slate-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 The AdSense Blueprint Academy is an elite masterclass designed for serious publishers. We turn "Low Value Content" rejections into high-CPM approvals through data-driven architectural standards.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Link href="/checklist" className="btn-premium group">
                   Start Site Audit
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -34,7 +40,7 @@ export default function Home() {
                 </Link>
               </div>
               
-              <div className="mt-12 flex items-center gap-8 text-slate-500 border-t border-white/5 pt-8">
+              <div className="mt-12 flex justify-center lg:justify-start items-center gap-8 text-slate-500 border-t border-white/5 pt-8">
                 <div className="flex flex-col">
                   <span className="text-white font-bold text-2xl">98%</span>
                   <span className="text-xs uppercase tracking-tighter">Success Rate</span>
@@ -52,19 +58,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="flex-1 relative w-full max-w-[600px]">
               <div className="absolute inset-0 bg-indigo-500/20 blur-[100px] rounded-full" />
               <div className="relative glass-panel p-4 border-white/10 shadow-2xl rotate-2">
-                {/* Embedded Hero Image */}
                 <Image 
                   src="/hero_graphic.png" 
                   alt="AdSense Academy Hero" 
                   width={800} 
                   height={800} 
-                  className="rounded-xl shadow-inner"
+                  className="rounded-xl shadow-inner w-full h-auto"
                 />
               </div>
-              {/* Floating Stat Card */}
               <div className="absolute -bottom-6 -left-6 glass-card p-6 border-emerald-500/30 animate-bounce-slow">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -81,7 +85,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Pillars - Glass Cards */}
+      {/* Middle Banner Ad */}
+      <div className="container my-12">
+        <AdSlot type="leaderboard" />
+      </div>
+
+      {/* The Pillars */}
       <section className="py-32 relative">
         <div className="container">
           <div className="text-center mb-20">
@@ -102,7 +111,7 @@ export default function Home() {
                 <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <pillar.icon size={28} className="text-slate-400 group-hover:text-primary transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{pillar.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-white">{pillar.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{pillar.desc}</p>
               </div>
             ))}
@@ -110,19 +119,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement - Premium Integration */}
-      <div className="container py-12">
-        <div className="ad-slot-premium">
-          Elite Publisher Network - Exclusive Advertisement
-        </div>
-      </div>
-
       {/* Final CTA */}
       <section className="py-40 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/10 -z-10" />
         <div className="container text-center relative z-10">
           <div className="max-w-3xl mx-auto glass-panel p-16 border-white/5 bg-white/[0.02]">
-            <h2 className="text-5xl font-black mb-8 leading-tight">Join the Elite <br /><span className="text-primary">1% of Publishers.</span></h2>
+            <h2 className="text-5xl font-black mb-8 leading-tight text-white">Join the Elite <br /><span className="text-primary">1% of Publishers.</span></h2>
             <p className="text-lg text-slate-400 mb-12">
               Stop guessing. Start building. The Blueprint Academy is your final stop on the road to financial independence through content.
             </p>
