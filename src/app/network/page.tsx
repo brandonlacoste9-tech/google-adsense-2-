@@ -29,11 +29,19 @@ export default function NetworkPage() {
     },
     {
       name: "Capital Pulse",
-      url: "https://capital-pulse.vercel.app",
+      url: "https://google-adsense-3.vercel.app",
       niche: "Finance & Markets",
       desc: "Institutional-grade financial news and market alpha for the modern retail investor.",
       icon: Globe,
       color: "text-amber-400"
+    },
+    {
+      name: "Legal Nexus",
+      url: "https://google-adsense-4.vercel.app",
+      niche: "Legal & Compliance",
+      desc: "Premier repository for corporate law, intellectual property protection, and regulatory intelligence.",
+      icon: Shield,
+      color: "text-slate-300"
     }
   ];
 
