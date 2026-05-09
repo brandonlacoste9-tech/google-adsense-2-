@@ -69,6 +69,7 @@ const guidesData: Record<string, any> = {
     content: `
       <h2>The AdSense Program Policies</h2>
       <p>Google is extremely strict about their policies. Even a small violation can lead to a permanent account ban.</p>
+    `
   },
   "ad-placement": {
     title: "Ad Placement Logic: Maximize Revenue, Keep the Users",
