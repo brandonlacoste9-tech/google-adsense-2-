@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Check, AlertCircle, Sparkles } from 'lucide-react';
+import { Check, AlertCircle, Sparkles, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ChecklistPage() {
   const [checked, setChecked] = useState<string[]>([]);
@@ -23,72 +24,94 @@ export default function ChecklistPage() {
   const progress = Math.round((checked.length / items.length) * 100);
 
   return (
-    <div className="container py-20">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">AdSense Readiness Test</h1>
-        <p className="text-slate-600 mb-12 italic">
-          Check off your progress to see if your site meets the official 2026 AdSense approval standards.
-        </p>
-
-        <div className="mb-12">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-bold text-slate-700">Readiness Score</span>
-            <span className="text-sm font-bold text-primary">{progress}%</span>
+    <div className="relative min-h-screen py-32">
+      <div className="glow-spot glow-primary" />
+      
+      <div className="container relative z-10">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-black mb-4 gradient-text">Site Readiness Audit</h1>
+            <p className="text-slate-400 text-lg">
+              Verify your architectural compliance before submitting to Google AdSense.
+            </p>
           </div>
-          <div className="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-primary transition-all duration-500 ease-out" 
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-        </div>
 
-        <div className="space-y-4">
-          {items.map((item) => (
-            <div 
-              key={item.id} 
-              onClick={() => toggle(item.id)}
-              className={`p-5 rounded-xl border cursor-pointer transition-all ${
-                checked.includes(item.id) 
-                ? 'border-emerald-200 bg-emerald-50 text-emerald-900' 
-                : 'border-slate-200 hover:border-indigo-200 hover:bg-indigo-50'
-              }`}
-            >
-              <div className="flex items-center gap-4">
-                <div className={`w-6 h-6 rounded border flex items-center justify-center ${
-                  checked.includes(item.id) ? 'bg-emerald-500 border-emerald-500 text-white' : 'bg-white border-slate-300'
-                }`}>
-                  {checked.includes(item.id) && <Check size={14} strokeWidth={3} />}
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest opacity-60 block mb-1">
-                    {item.category}
-                  </span>
-                  <p className="font-semibold">{item.text}</p>
+          <div className="glass-panel p-10 border-white/5 mb-12">
+            <div className="flex justify-between items-center mb-4">
+              <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Blueprint Completion</span>
+              <span className="text-2xl font-black text-primary">{progress}%</span>
+            </div>
+            <div className="w-full h-4 bg-white/5 rounded-full overflow-hidden p-1 border border-white/5">
+              <div 
+                className="h-full bg-gradient-to-r from-primary to-emerald-500 rounded-full transition-all duration-700 ease-out shadow-[0_0_20px_rgba(99,102,241,0.5)]" 
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4">
+            {items.map((item) => (
+              <div 
+                key={item.id} 
+                onClick={() => toggle(item.id)}
+                className={`group p-6 rounded-2xl border transition-all cursor-pointer ${
+                  checked.includes(item.id) 
+                  ? 'border-emerald-500/50 bg-emerald-500/5 text-white' 
+                  : 'border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/10'
+                }`}
+              >
+                <div className="flex items-center gap-6">
+                  <div className={`w-8 h-8 rounded-xl border flex items-center justify-center transition-all ${
+                    checked.includes(item.id) 
+                    ? 'bg-emerald-500 border-emerald-500 text-white shadow-[0_0_15px_rgba(16,185,129,0.4)]' 
+                    : 'bg-transparent border-white/10 group-hover:border-primary'
+                  }`}>
+                    {checked.includes(item.id) && <Check size={18} strokeWidth={4} />}
+                  </div>
+                  <div>
+                    <span className={`text-[10px] font-black uppercase tracking-[0.2em] mb-1 block ${
+                      checked.includes(item.id) ? 'text-emerald-400' : 'text-slate-500'
+                    }`}>
+                      {item.category}
+                    </span>
+                    <p className={`text-lg font-bold transition-colors ${
+                      checked.includes(item.id) ? 'text-white' : 'text-slate-300'
+                    }`}>{item.text}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {progress === 100 ? (
-          <div className="mt-12 p-8 bg-indigo-900 rounded-2xl text-white text-center animate-bounce">
-            <Sparkles className="mx-auto mb-4 text-amber-400" />
-            <h3 className="text-2xl font-bold mb-2">You're Ready!</h3>
-            <p className="text-indigo-200 mb-6">Your site meets all the core criteria for AdSense approval. Go ahead and submit your application.</p>
-            <a href="https://adsense.google.com" target="_blank" className="btn-primary">
-              Visit Google AdSense
-            </a>
-          </div>
-        ) : (
-          <div className="mt-12 p-6 bg-amber-50 border border-amber-200 rounded-xl flex gap-4">
-            <AlertCircle className="text-amber-500 shrink-0" />
-            <div>
-              <p className="text-sm text-amber-900 font-semibold mb-1">Items Remaining</p>
-              <p className="text-xs text-amber-800">Please complete all checklist items before applying. Google rejection for "Low Value Content" often stems from missing these fundamentals.</p>
+          {progress === 100 ? (
+            <div className="mt-16 glass-panel p-12 border-emerald-500/20 bg-emerald-500/[0.02] text-center">
+              <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6 text-emerald-400">
+                <Sparkles size={40} />
+              </div>
+              <h3 className="text-3xl font-black mb-4 text-white">Elite Status Achieved</h3>
+              <p className="text-slate-400 mb-8 max-w-md mx-auto">Your site infrastructure meets the highest standards of the Blueprint Academy. You are clear for takeoff.</p>
+              <a href="https://adsense.google.com" target="_blank" className="btn-premium px-12">
+                Launch Application
+              </a>
             </div>
+          ) : (
+            <div className="mt-16 p-8 rounded-2xl bg-indigo-500/5 border border-indigo-500/20 flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 shrink-0">
+                <AlertCircle size={24} />
+              </div>
+              <div>
+                <h4 className="text-white font-bold mb-1">Architectural Gaps Detected</h4>
+                <p className="text-sm text-slate-400 leading-relaxed">Please resolve all checklist items. Submitting with gaps increases the risk of a "Low Value" permanent flag on your publisher account.</p>
+              </div>
+            </div>
+          )}
+          
+          <div className="mt-20 text-center">
+            <Link href="/" className="text-slate-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">
+              ← Return to Academy Hub
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

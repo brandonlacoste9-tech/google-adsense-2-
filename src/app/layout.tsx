@@ -25,23 +25,23 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body>
-        <nav className="border-b border-border bg-white/80 backdrop-blur-md sticky top-0 z-50">
-          <div className="container py-4 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+      <body className="antialiased">
+        <nav className="nav-blur sticky top-0 z-50">
+          <div className="container py-6 flex justify-between items-center">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
                 A
               </div>
               <div className="leading-tight">
-                <span className="block font-bold text-lg text-primary">AdSense</span>
-                <span className="block text-xs font-semibold text-muted uppercase tracking-wider">Blueprint Academy</span>
+                <span className="block font-black text-xl text-white tracking-tighter">AdSense</span>
+                <span className="block text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em]">Blueprint Academy</span>
               </div>
             </Link>
-            <div className="flex gap-6 text-sm font-semibold">
-              <Link href="/" className="hover:text-primary">Home</Link>
-              <Link href="/guides" className="hover:text-primary">Guides</Link>
-              <Link href="/checklist" className="hover:text-primary">Checklist</Link>
-              <Link href="/about" className="hover:text-primary">About</Link>
+            <div className="flex gap-10 text-sm font-bold text-slate-400">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <Link href="/guides" className="hover:text-white transition-colors">Curriculum</Link>
+              <Link href="/checklist" className="hover:text-white transition-colors">Audit Tool</Link>
+              <Link href="/about" className="hover:text-white transition-colors">About</Link>
             </div>
           </div>
         </nav>
