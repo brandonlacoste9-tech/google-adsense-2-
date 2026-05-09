@@ -71,14 +71,48 @@ const guidesData: Record<string, any> = {
       <p>Google is extremely strict about their policies. Even a small violation can lead to a permanent account ban.</p>
     `
   },
-  "ad-placement": {
-    title: "Ad Placement Logic: Maximize Revenue, Keep the Users",
+    `
+  },
+  "advanced-seo": {
+    title: "Advanced SEO Indexing: Getting Discovered by the Google Bot",
+    author: "Brandon Lacoste",
+    date: "May 2026",
+    readTime: "20 min read",
+    content: `
+      <h2>The Indexing Hurdle</h2>
+      <p>If Google doesn't index your pages, you don't exist. We teach you the 'Index Booster' strategy using API-led indexing and semantic sitemap optimization.</p>
+      <h3>Sitemap Mastery</h3>
+      <p>A sitemap isn't just a list; it's a hierarchy. Learn how to prioritize your high-value content blocks.</p>
+    `
+  },
+  "keyword-research": {
+    title: "High-CPC Keyword Research: Finding the $50 Clicks",
+    author: "Brandon Lacoste",
+    date: "May 2026",
+    readTime: "25 min read",
+    content: `
+      <h2>The Gold Mine</h2>
+      <p>Why write for $0.10 clicks when you can write for $50.00? We reveal the specific keyword intent behind high-payout categories like insurance and legal tech.</p>
+    `
+  },
+  "mobile-optimization": {
+    title: "The Mobile First Mandate: 2026 UX Standards",
+    author: "Brandon Lacoste",
+    date: "May 2026",
+    readTime: "15 min read",
+    content: `
+      <h2>Mobile is the Primary Site</h2>
+      <p>Google no longer looks at your desktop site first. If your mobile layout shift (CLS) is too high, your revenue will drop by 40%.</p>
+    `
+  },
+  "profit-shield": {
+    title: "The Profit Shield: Protecting Your Account from Invalid Traffic",
     author: "Brandon Lacoste",
     date: "May 2026",
     readTime: "18 min read",
     content: `
-      <h2>The Balance of Power</h2>
-      <p>Putting too many ads on a page will kill your user experience and get you banned. Too few, and you're leaving money on the table.</p>
+      <h2>Security is Revenue</h2>
+      <p>Bots and malicious competitors can get your account banned by spamming your ads. Learn how to implement server-side invalid traffic filters.</p>
     `
   }
 };

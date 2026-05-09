@@ -9,7 +9,7 @@ export default function GuidesIndex() {
       guides: [
         { title: "Site Speed Mastery", slug: "site-speed", desc: "How to achieve sub-second load times for AdSense.", duration: "15 min" },
         { title: "Mobile-First UX", slug: "mobile-ux", desc: "Optimizing for the 70% of traffic that uses a phone.", duration: "10 min" },
-        { title: "SSL & Security", slug: "security", desc: "Mandatory technical settings for trust.", duration: "5 min" },
+        { title: "Advanced SEO Indexing", slug: "advanced-seo", desc: "Forcing Google to discover your content.", duration: "20 min" },
       ]
     },
     {
@@ -18,7 +18,7 @@ export default function GuidesIndex() {
       guides: [
         { title: "The Niche Selection Matrix", slug: "niche-selection", desc: "Choosing high-CPM topics.", duration: "12 min" },
         { title: "The 1000-Word Rule", slug: "content-strategy", desc: "Writing content Google can't reject.", duration: "15 min" },
-        { title: "Keyword Architecture", slug: "keyword-research", desc: "Building semantic clusters.", duration: "20 min" },
+        { title: "Keyword Architecture", slug: "keyword-research", desc: "Building semantic clusters.", duration: "25 min" },
       ]
     },
     {
@@ -27,6 +27,7 @@ export default function GuidesIndex() {
       guides: [
         { title: "Ad Placement Logic", slug: "ad-placement", desc: "Max revenue without hurting UX.", duration: "18 min" },
         { title: "Policy Compliance", slug: "compliance", desc: "Avoiding the dreaded 'Policy Violation'.", duration: "12 min" },
+        { title: "The Profit Shield", slug: "profit-shield", desc: "Protecting your AdSense account.", duration: "18 min" },
       ]
     }
   ];

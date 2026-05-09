@@ -4,8 +4,20 @@ import { CheckCircle, BookOpen, Settings, Layout, Search, BarChart, ArrowRight, 
 import AdSlot from "@/components/AdSlot";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "AdSense Blueprint Academy",
+    "description": "Professional training for digital publishers and AdSense monetization.",
+    "url": "https://google-adsense-2-.vercel.app"
+  };
+
   return (
     <div className="relative min-h-screen page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Background Decor */}
       <div className="glow-spot glow-primary" />
       <div className="glow-spot glow-secondary" />
