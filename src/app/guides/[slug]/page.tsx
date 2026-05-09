@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronLeft, Calendar, User, Clock, CheckCircle2, AlertTriangle, Lightbulb } from "lucide-react";
+import { ChevronLeft, Calendar, User, Clock, CheckCircle2, AlertTriangle, Lightbulb, ShieldCheck, ArrowRight } from "lucide-react";
 
 const guidesData: Record<string, any> = {
   "niche-selection": {
