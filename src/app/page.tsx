@@ -29,8 +29,8 @@ export default function Home() {
                   Start Site Audit
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/guides" className="px-8 py-4 rounded-xl border border-white/10 hover:bg-white/5 transition-all font-bold">
-                  View Curriculum
+                <Link href="/calculator" className="px-8 py-4 rounded-xl border border-white/10 hover:bg-white/5 transition-all font-bold">
+                  Profit Calculator
                 </Link>
               </div>
               

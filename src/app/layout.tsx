@@ -40,8 +40,8 @@ export default function RootLayout({
             <div className="flex gap-10 text-sm font-bold text-slate-400">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <Link href="/guides" className="hover:text-white transition-colors">Curriculum</Link>
+              <Link href="/calculator" className="hover:text-white transition-colors">Profit Calc</Link>
               <Link href="/checklist" className="hover:text-white transition-colors">Audit Tool</Link>
-              <Link href="/about" className="hover:text-white transition-colors">About</Link>
             </div>
           </div>
         </nav>

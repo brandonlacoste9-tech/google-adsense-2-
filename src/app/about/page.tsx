@@ -1,36 +1,60 @@
 import Link from "next/link";
+import { ShieldCheck, Target, TrendingUp, Users, ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <div className="container py-24">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">About the Academy</h1>
-        <div className="prose prose-slate lg:prose-lg leading-relaxed text-slate-600">
-          <p>
-            The <strong>AdSense Blueprint Academy</strong> was founded with a singular mission: to simplify the journey of digital publishing and monetization.
-          </p>
-          <p>
-            In an era where "rejection for low-value content" has become the standard response for many aspiring bloggers, we recognized the need for a transparent, step-by-step roadmap that goes beyond the surface-level advice found on forums.
-          </p>
-          
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Our Philosophy</h2>
-          <p>
-            We believe that Google AdSense approval isn't a game of luck. It is a reward for building a high-quality, user-centric digital asset. We teach our students to stop building "for AdSense" and start building for their audience—knowing that approval is the natural byproduct of quality.
-          </p>
+    <div className="relative min-h-screen py-32">
+      <div className="glow-spot glow-primary opacity-20" />
+      
+      <div className="container relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-20">
+            <h1 className="text-6xl font-black mb-6 gradient-text">Our Mission</h1>
+            <p className="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto">
+              The AdSense Blueprint Academy was founded to bridge the gap between amateur blogging and professional digital publishing.
+            </p>
+          </div>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-6">What We Teach</h2>
-          <ul className="space-y-4 list-disc pl-6">
-            <li><strong>Technical Mastery:</strong> Ensuring your site is fast, secure, and semantically sound.</li>
-            <li><strong>Content Strategy:</strong> How to write articles that Google loves and users share.</li>
-            <li><strong>UX Design:</strong> Creating intuitive layouts that maximize engagement and ad viewability.</li>
-            <li><strong>Compliance:</strong> Navigating the complex landscape of legal requirements and program policies.</li>
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+            <div className="glass-panel p-10 border-white/5">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                <Target size={24} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">The Quality Mandate</h3>
+              <p className="text-slate-400 leading-relaxed">
+                In an era where "rejection for low-value content" is the standard response, we provide the architectural blueprints that ensure your site is built on a foundation of genuine value.
+              </p>
+            </div>
 
-          <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-border">
-            <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">Ready to join the ranks of successful publishers?</h3>
-            <div className="flex justify-center">
-              <Link href="/checklist" className="btn-primary">
-                Start Your Site Audit Now
+            <div className="glass-panel p-10 border-white/5">
+              <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 mb-6">
+                <TrendingUp size={24} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">The Profit Catalyst</h3>
+              <p className="text-slate-400 leading-relaxed">
+                We don't just teach you how to get approved. We teach you how to target the $15+ CPC keywords that turn a hobby into a high-yield digital asset.
+              </p>
+            </div>
+          </div>
+
+          <div className="glass-card p-12 border-white/5 bg-white/[0.02] mb-24">
+            <h2 className="text-3xl font-black mb-8 text-white">The Academy Philosophy</h2>
+            <div className="prose prose-invert prose-slate lg:prose-lg max-w-none text-slate-400">
+              <p>
+                We believe that Google AdSense approval isn't a game of luck. It is a reward for building a high-quality, user-centric digital asset. We teach our students to stop building "for AdSense" and start building for their audience—knowing that approval is the natural byproduct of quality.
+              </p>
+              <p>
+                Our team consists of veteran publishers who have collectively managed over 100+ AdSense accounts across dozens of niches. We have seen every rejection reason and built a solution for every one of them.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-8 text-white">Ready to join the elite?</h3>
+            <div className="flex justify-center gap-6">
+              <Link href="/checklist" className="btn-premium">
+                Audit Your Site
+                <ArrowRight size={18} />
               </Link>
             </div>
           </div>
